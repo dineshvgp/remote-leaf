@@ -69,6 +69,19 @@ const jobMetaDataStyle = {
   color: 'inherit'
 };
 
+const footerStyle = {
+  marginBottom: '16px',
+  background: '#ebebeb',
+  padding: '10px',
+  marginTop: '30px',
+  width: '100%',
+  textAlign: 'center'
+};
+
+const noMarginTopStyle = {
+  marginTop: '0'
+}
+
 const data = [{
   id: '1',
   title: 'Operations Engineer - Amazing Opportunity',
@@ -194,6 +207,37 @@ class MailTemplate extends Component {
     )
   }
 
+  footer() {
+    return (
+      <Table style={footerStyle}>
+        <TBody>
+          <TR>
+            <TD>
+              <p>This mail was sent to <a href="mailto:leaf@remoteLeaf.com">leaf@remoteLeaf.com</a> </p>
+            </TD>
+          </TR>
+          <TR>
+            <TD>
+              <Table width='100%'>
+                <TBody>
+                  <TR>
+                    <TD>
+                      <p style={noMarginTopStyle}>
+                        <a style={link} href="https://www.remoteLeaf.com/privacy_policy">Privacy Policy</a> {` | `}
+                        <a style={link} href="https://www.remoteLeaf.com/m/NrTYUcEKhRkw4iEkYaj-3Q==/unsubscribe">Instant Unsubscribe</a> {` | `}
+                        <a style={link} href="mailto:hello@remoteLeaf.com">leaf@remoteLeaf.com</a>
+                      </p>
+                    </TD>
+                  </TR>
+                </TBody>
+              </Table>
+            </TD>
+          </TR>
+        </TBody>
+      </Table>
+    )
+  }
+
   render() {
     return(
       <Table style={container}>
@@ -203,6 +247,7 @@ class MailTemplate extends Component {
               {this.header()}
               {this.description()}
               {data.map(job => this.jobsList(job))}
+              {this.footer()}
             </TD>
           </TR>
         </TBody>
