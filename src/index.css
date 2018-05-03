@@ -10,5 +10,5 @@ body {
                "Segoe UI Emoji", /* Emojis*/
                "Segoe UI Symbol"; /* Emojis*/
   font-size: 13px;
-  font-weight: lighter;
+  font-weight: 400;
 }

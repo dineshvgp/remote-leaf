@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import Oy from 'oy-vey';
+import logo from './logo.png'
 
 const {Table, TBody, TR, TD} = Oy;
+
 
 const container = {
   width: '575px',
@@ -22,17 +24,22 @@ const containerTop = {
   backgroundColor: '#F1F4F7'
 }
 
+const logoStyle = {
+  width: '330px'
+}
+
 const headerStyle = {
   fontSize: '60px',
   textAlign: 'center',
   background: '-webkit-linear-gradient(right, #3dca72, #228004)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  fontFamily: '"IM Fell DW Pica SC", serif'
 };
 
 const listHashContainer = {
-  margin: '-10px 0 0 10px'
+  margin: '0 0 0 10px'
 };
 
 const listHash = {
@@ -71,7 +78,8 @@ const jobIndexStyle = {
   marginRight: '10px',
   color: '#aaa',
   textAlign: 'right',
-  marginTop: '1px'
+  marginTop: '3px',
+  width: '15px'
 };
 
 const jobTitleStyle = {
@@ -80,8 +88,7 @@ const jobTitleStyle = {
 };
 
 const jobMetaDataStyle = {
-  textDecoration: 'none',
-  color: 'inherit'
+  ...link
 };
 
 const footerStyle = {
@@ -99,56 +106,81 @@ const noMarginTopStyle = {
 
 const data = [{
   id: '1',
-  title: 'Operations Engineer - Amazing Opportunity',
-  link: 'http://www.redguava.com.au/jobs/operations_engineer/',
-  company: 'Red Guava'
+  title: 'Sr. Javascript Developer',
+  link: 'https://kodify.recruitee.com/o/senior-frontend-developer-react-architect',
+  company: 'Sticker Mule',
+  salary: '$90k - 115k',
+  location: 'Anywhere',
+  category: 'Javascript'
 }, {
-  id: '2',
-  title: 'Tor Implementation Engineer @ Brave Software',
-  link: 'https://www.wfh.io/jobs/3907-tor-implementation-engineer-brave-software',
-  company: 'Brave Software'
+  id: 2,
+  title: 'Software Engineer, Front End',
+  link: 'https://stackoverflow.com/jobs/154079/senior-machine-learning-software-engineer-stardog-union?so=p&pg=2&offset=24&r=true',
+  company: 'YouEarnedIt',
+  salary: '£45k - 50k',
+  location: 'US',
+  category: 'Frontend'
 }, {
   id: 3,
-  title: 'Senior Backend Node.JS Engineer @ Formidable',
-  link: 'https://www.wfh.io/jobs/3905-senior-backend-node-js-engineer-formidable',
-  company: 'Formidable'
+  title: 'Full Stack Developer',
+  link: 'https://stackoverflow.com/jobs/154331/cloud-solution-engineer-dito?so=p&pg=1&offset=4&r=true',
+  company: 'Countly',
+  salary: '$24K – $36K',
+  location: 'Europe',
+  category: 'Fullstack, Javascript'
 }, {
   id: 4,
-  title: 'Engineering Manager, JavaScript Team @ Mozilla',
-  link: 'https://www.wfh.io/jobs/3900-engineering-manager-javascript-team-mozilla',
-  company: 'Mozilla'
+  title: 'Project Manager',
+  link: 'https://stackoverflow.com/jobs/157141/drupal-php-developer-with-mobile-experience-accella?so=p&pg=1&offset=15&r=true',
+  company: 'Cornershop Creative',
+  salary: '$50,000 - $70,000',
+  location: 'US',
+  category: 'Product'
 }, {
   id: 5,
-  title: 'Entrepreneurial Sales Development Hacker in Utah',
-  link: 'https://weworkremotely.com/jobs/5451-entrepreneurial-sales-development-hacker-in',
-  company: 'Mokriya'
+  title: 'Senior Product Engineer',
+  link: 'https://stackoverflow.com/jobs/apply/158507?reset=False',
+  company: 'Buffer',
+  location: 'Anywhere',
+  category: 'Product, Php, Javascript'
 }, {
   id: 6,
-  title: 'WordPress Support & Happiness Engineer',
-  link: 'https://weworkremotely.com/jobs/5638-wordpress-support-happiness-engineer',
-  company: 'CafeMedia'
+  title: 'Senior Developer / Full-Stack / Rails',
+  link: 'https://stackoverflow.com/jobs/159428/mid-senior-front-end-web-developer-react-redux-seven-hills-consulting-inc?med=clc',
+  company: 'Panda Strike',
+  salary: '$100k - 145k',
+  location: 'US',
+  category: 'Fullstack, Ruby, Javascript'
 }, {
   id: 7,
-  title: 'Masterarbeit "Migration bestehender Applikation in eine Serverless Architektur"',
-  link: 'https://stackoverflow.com/jobs/156248/masterarbeit-migration-bestehender-applikation-senacor-technologies-ag?a=QoQpWG6L1OU',
-  company: 'Senacor Technologies AG'
+  title: 'Product Manager',
+  link: 'https://stackoverflow.com/jobs/128492/security-engineer-java-elastic-leading-open-elastic?so=p&pg=2&offset=10&r=true',
+  company: 'OpenLaw',
+  salary: '$100k - 120k | Equity',
+  location: 'Anywhere',
+  category: 'Product'
 }, {
   id: 8,
-  title: 'Abschlussarbeit zu Smart Contract-Plattformen in der Praxis',
-  link: 'https://stackoverflow.com/jobs/156245/abschlussarbeit-zu-smart-contract-plattformen-in-senacor-technologies-ag',
-  company: 'Senacor Technologies AG'
+  title: 'Front end lead developer for transportation analytics software startup',
+  link: 'https://stackoverflow.com/jobs/41305/front-end-engineer-at-successful-edtech-startup-homer-learning',
+  company: 'Alar software llc',
+  location: 'US',
+  category: 'Frontend'
 }, {
   id: 9,
-  title: 'Frontend developer to Swedish start-up in Connected Health',
-  link: 'https://stackoverflow.com/jobs/155929/frontend-developer-to-swedish-start-up-in-cross-technology-solutions',
-  company: 'Cross Technology Solutions'
-}, {
-  id: 10,
-  title: 'UI Engineering Manager- Leading Open Source Company',
+  title: 'Senior Product Designer ',
   link: 'https://stackoverflow.com/jobs/156126/ui-engineering-manager-leading-open-source-elastic',
-  company: 'Elastic',
-  location: 'Anywhere',
-  Salary: '$85k - 200k'
+  company: 'Kindrid',
+  location: 'US',
+  category: 'Product, Frontend'
+}, {
+  id: '10',
+  title: 'Fullstack Engineer',
+  link: 'https://stackoverflow.com/jobs/107608/senior-lead-qa-test-engineer-compucorp?so=p&pg=1&offset=14&r=true',
+  company: 'Pomello',
+  salary: '$100K – $150K',
+  location: 'US',
+  category: 'Fullstack, Javascript'
 }]
 
 class MailTemplate extends Component {
@@ -159,9 +191,9 @@ class MailTemplate extends Component {
         <TBody>
           <TR>
             <TD>
-              <span style={headerStyle}>Remote Leaf</span>
+              <img style={logoStyle} src={logo} />
               <p style={listHashContainer}>
-                <span style={listHash}>Issue #37 — September 30, 2017</span>
+                <span style={listHash}>May 02, 2018</span>
               </p>
             </TD>
           </TR>
@@ -177,7 +209,7 @@ class MailTemplate extends Component {
           <TR>
             <TD>
               <p style={descStyle}>
-                You receive this email because you are subscribed to <a style={link} href="https://www.remoteleaf.com/">Remote Leaf</a>.
+                Here are the few companies hiring for the fullstack, frontend, product categories and accepting applications from The United States.
               </p>
             </TD>
           </TR>
@@ -208,7 +240,8 @@ class MailTemplate extends Component {
             <TD>
               <a style={jobTitleStyle} href={job.link} target='_blank'>{job.title}</a>
               <div>
-                <a style={jobMetaDataStyle} href="https://news.ycombinator.com/item?id=15368353">{job.company} | points: 500 | comments: 255</a>
+                <a style={jobMetaDataStyle} href={job.link}>{job.company} </a>
+                | {job.salary && <span>Salary: {job.salary} |</span>} Location: {job.location} | {job.category}
               </div>
             </TD>
           </TR>
@@ -240,7 +273,7 @@ class MailTemplate extends Component {
         <TBody>
           <TR>
             <TD>
-              <p>This mail was sent to <a href="mailto:leaf@remoteLeaf.com">leaf@remoteLeaf.com</a> </p>
+              <p>This mail was sent to <a href="mailto:leaf@remoteLeaf.com">hello@remoteleaf.com</a> </p>
             </TD>
           </TR>
           <TR>
@@ -250,9 +283,7 @@ class MailTemplate extends Component {
                   <TR>
                     <TD>
                       <p style={noMarginTopStyle}>
-                        <a style={link} href="https://www.remoteLeaf.com/privacy_policy">Privacy Policy</a> {` | `}
-                        <a style={link} href="https://www.remoteLeaf.com/m/NrTYUcEKhRkw4iEkYaj-3Q==/unsubscribe">Instant Unsubscribe</a> {` | `}
-                        <a style={link} href="mailto:hello@remoteLeaf.com">leaf@remoteLeaf.com</a>
+                        Please reply to this email if you have any questions.
                       </p>
                     </TD>
                   </TR>
@@ -289,22 +320,22 @@ class MailTemplate extends Component {
     }
     return(
       [
-        <div style={containerTop}>
+        <div style={containerTop} key='titleBar'>
           <div style={circle}></div>
           <div style={circle2}></div>
           <div style={circle3}></div>
         </div>,
-        <Table style={container}>
-        <TBody>
-          <TR>
-            <TD>
-              {this.header()}
-              {this.description()}
-              {data.map(job => this.jobsList(job))}
-              {this.footer()}
-            </TD>
-          </TR>
-        </TBody>
+        <Table style={container} key='body'>
+          <TBody>
+            <TR>
+              <TD>
+                {this.header()}
+                {this.description()}
+                {data.map(job => this.jobsList(job))}
+                {this.footer()}
+              </TD>
+            </TR>
+          </TBody>
       </Table>
 ]    )
   }
