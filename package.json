@@ -4,16 +4,20 @@
   "private": true,
   "dependencies": {
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14"
+    "react-dom": "^16.0.1",
+    "react-scripts": "1.0.14",
+    "snyk": "^1.103.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "oy-vey": "^0.9.0"
-  }
+  },
+  "snyk": true
 }
